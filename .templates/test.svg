@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<title>test-svg</title>
+	<style>
+		.s0 { fill: #8080a0 } 
+	</style>
+	<g id="Layer 1">
+		<path id="path2" fill-rule="evenodd" class="s0" d="m13.6 5.6c0.5-0.5 0.5-1.5 0-2.1-0.6-0.6-1.6-0.6-2.2 0l-4.9 5-1.9-2c-0.6-0.6-1.6-0.6-2.2 0-0.5 0.6-0.5 1.6 0 2.1l3 3c0.6 0.6 1.6 0.6 2.2 0z"/>
+	</g>
+</svg>

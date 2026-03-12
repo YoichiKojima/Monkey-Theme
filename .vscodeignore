@@ -1,0 +1,7 @@
+**/*
+!package.json
+!*.md
+!src/assets
+!src/icons
+!src/themes/*.json
+!src/**/monkey-icon.json

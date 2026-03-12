@@ -1,0 +1,9 @@
+[tools]
+node = "lts-iron"
+pnpm = "9"
+
+[env]
+
+[env._]
+path = "./node_modules/.bin/"
+file = ".env"

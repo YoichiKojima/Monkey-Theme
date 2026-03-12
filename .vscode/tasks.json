@@ -1,0 +1,71 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build:dev",
+      "label": "dev",
+      "icon": { "id": "debug-stackframe" },
+      "options": {
+        "statusbar": {
+          "icon": { "id": "debug-stackframe" },
+          "label": "",
+          "detail": "dev"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "pub",
+      "label": "publish",
+      "icon": { "id": "arrow-up" },
+      "options": {
+        "statusbar": {
+          "icon": { "id": "arrow-up" },
+          "label": "",
+          "detail": "publish"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "package",
+      "group": "build",
+      "label": "package",
+      "icon": { "id": "package" },
+      "options": {
+        "statusbar": {
+          "icon": { "id": "package" },
+          "label": "",
+          "detail": "package"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "label": "start",
+      "icon": { "id": "run" },
+      "options": {
+        "statusbar": {
+          "icon": { "id": "run" },
+          "label": "",
+          "detail": "start"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "label": "format and lint",
+      "icon": { "id": "flame" },
+      "options": {
+        "statusbar": {
+          "icon": { "id": "flame" },
+          "label": "",
+          "detail": "format and lint"
+        }
+      }
+    }
+  ]
+}

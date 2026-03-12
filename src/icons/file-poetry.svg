@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 448.17 560" width="16"
+  height="16">
+  <g transform="translate(224.085 280) scale(0.73) translate(-224.085 -280)">
+    <g style="isolation: isolate;">
+      <g id="Layer_1" data-name="Layer 1">
+        <path style="mix-blend-mode: multiply;" fill="#7380F9" d="M168.08,560A570.54,570.54,0,0,0,459.84,403.59L56.25,0V448.17Z"
+          transform="translate(-56.25)" />
+        <path fill="#5BAFD4" d="M56.25,448.17C303.77,448.17,504.42,247.52,504.42,0H56.25Z"
+          transform="translate(-56.25)" />
+        <path fill="#d9ddff" style="mix-blend-mode: multiply;" d="M168.08,560A570.54,570.54,0,0,0,459.84,403.59L56.25,0V448.17Z"
+          transform="translate(-56.25)" />
+      </g>
+    </g>
+  </g>
+</svg>

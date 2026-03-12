@@ -1,0 +1,144 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    // Replacing the Default Values
+    "*.ts": "",
+    "*.js": "",
+    "*.jsx": "",
+    "*.tsx": "",
+    "tsconfig.json": "",
+
+    // Javascript
+    ".js": ".mjs, .cjs",
+    ".js.map": ".mjs.map, .cjs.map",
+    ".config.js": ".config.mjs, .config.cjs",
+    ".test.js": ".test.mjs, .test.cjs",
+    ".spec.js": ".spec.mjs, .spec.cjs",
+    ".jest.js": ".jest.mjs, .jest.cjs",
+    ".ts": ".mts, .cts", // Typescript files
+    ".config.ts": ".config.mts, .config.cts",
+    ".d.ts": ".d.mts, .d.cts",
+    ".def.ts": ".def.mts, .def.cts",
+    ".spec.ts": ".spec.mts, .spec.cts",
+    ".test.ts": ".test.mts, .test.cts",
+    ".jest.ts": ".jest.mts, .jest.cts",
+    ".tsx": ".*.tsx",
+    ".jsx": ".*.jsx",
+    // ".cjs": "*.cjs, .cjs.*", // CommunJS files
+    // ".mjs": "*.mjs, .mjs.*", // ESmodules files
+    // ".cts": "*.cts, .cts.*", // Typescript files
+    // ".mts": "*.mts, .mts.*", // Typescript files
+    // ".jsx": "*.jsx, .jsx.*", // React javascript files
+    // ".tsx": "*.tsx, .tsx.*", // React typescript files
+    "jsconfig.json": "tsconfig.json, .tsbuildinfo", // Config files
+    "package.json": "package-lock.json, pnpm-*.yaml, yarn.lock, bun.lockb", // Project files
+    // ".js": "*.js, .js.*, .cjs, .mjs, .ts, , .mts, .cts, .jsx, .tsx, .vue, jsconfig.json, package.json",
+
+    // Java
+    ".class": ".jmod", // Compiled class
+    ".jar": ".war, .ear", // Package files
+    ".mf": "manifest", // Manifest files
+    ".java": ".class, .jsp, .jar, .mf, pom.xml, .gradle, .properties",
+
+    // DotNet
+    ".cs": ".csproj, .sln",
+
+    // Python
+    "pipfile": "pipfile.lock", // pipenv
+    "poetry.lock": "pyproject.toml", // poetry
+    ".py": "pipfile, poetry.lock, requirements.txt",
+
+    // Maven
+    "pom.xml": "mvnw, mvnw.cmd, mvnw.sh",
+
+    // Gradle
+    ".gradle": "gradlew, gradlew.bat, gradlew.sh",
+
+    // Dart
+    ".dart": ".g.dart, .arb, .flutter-plugins, .packages, analisys_options.yaml, pubspec.yaml",
+
+    // Docker
+    "dockerfile": "*compose.yml, *compose.yaml, .dockerignore",
+
+    // CMD/PowerShell
+    ".bat": ".ps*, .cmd",
+
+    // Shell
+    ".sh": ".bash*, .fish, .zsh",
+
+    // Misc
+    "misc": ".xml, .csv, .prisma, .txt, .toml, .log, .diff",
+
+    // Json
+    ".json": ", .jsonc, .jsonl, .map, .ipynb",
+
+    // SQL
+    ".sql": ".db, .sqlite",
+
+    // Version Managers
+    ".tool-versions": ".*-version, .nvmrc, .rvmrc, .sdkmanrc, .ruby-gemset",
+
+    // Git
+    ".gitignore": ".gitkeep, .gitattributes",
+
+    // Diagrams
+    ".dio": ".drawio*, .uml",
+
+    // Packages and Compact Files
+    ".zip": ".7z, .appimage, .aur, .bz2, .deb, .exe, .flatpak, .gz, .iso, .obs, .pkg, .ppa, .rar, .rpm, .snap, .tar, .tgz, .vsix, .xz, .zst, .jar, .war, .ear",
+
+    // Audios
+    ".mp3": ".ogg, .wav",
+
+    // Images (BitMap)
+    ".png": ".avif, .bmp, .gif, .heic, .heif, .icns, .ico, .jpeg, .jpg, .tiff, .webp",
+
+    // Images (Vector)
+    ".svg": ".ai, .eps, .cdr, .wmf, .dxf",
+
+    // Videos
+    ".mp4": ".avi, .flv, .m4v, .mkv, .mov, .mpeg, .mpg, .webm, .wmv",
+
+    // Documents
+    ".doc": ".docm, .docx, .dot, .dotm, .dotx, .gdoc, .odt, .ott, .pages",
+
+    // Tables
+    ".xls": ".xlsx, .xlsb, .xlsm, .xltm, .xltx, .ods, .ots, .numbers, .gsheet, .csv",
+
+    // Presentations
+    ".ppt": ".pptx, .pps, .ppsx, .pot, .potx, .otp, .odp, .key",
+
+    // License
+    "license": "license.*",
+
+    // Changelog
+    "changelog": "changelog.*",
+
+    // Readme
+    "readme": "readme.*",
+
+    // Markdown
+    ".md": ".mdx, .rst",
+
+    // Environment
+    ".env": ".venv",
+
+    // Yaml
+    ".yaml": ".yml",
+
+    // Web
+    ".html": ".css, .php, .scss",
+
+    // API test
+    ".http": ".rest, .web, .rc, .bru",
+
+    // Config
+    ".conf": ".editorconfig, .cfg, .ini, .lock",
+
+    // VsCode
+    ".vscodeignore": ".code-workspace",
+
+    // C plus plus
+    ".cpp": ".ino"
+  }
+}

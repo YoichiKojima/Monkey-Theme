@@ -1,0 +1,77 @@
+{
+  "name": "monkey-theme",
+  "displayName": "Monkey Theme",
+  "description": "A minimalist pretty icon and color theme",
+  "icon": "src/assets/icon.png",
+  "publisher": "YoichiKojima",
+  "packageManager": "pnpm@9.15.2",
+  "type": "module",
+  "author": {
+    "name": "YoichiKojima",
+    "email": "y.kojima2001@gmail.com",
+    "url": "https://github.com/YoichiKojima"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YoichiKojima/Monkey-Theme"
+  },
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "scripts": {
+    "build": "tsx src/app/index.ts",
+    "build:dev": "tsx watch src/app/index.ts",
+    "package": "vsce package",
+    "lint": "pnpm run --parallel '/^lint:*/'",
+    "lint:biome": "biome check --fix",
+    "lint:svgo": "svgo -f src/icons/",
+    "pub": "pnpm run --parallel '/^pub:*/'",
+    "pub:vsce": "vsce publish",
+    "pub:ovsx": "ovsx publish",
+    "prepare": "husky",
+    "prepub": "pnpm build",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "pnpm lint:biome",
+    "*.ts": "pnpm lint:biome",
+    "*.json": "pnpm lint:biome"
+  },
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "monkey-icons",
+        "label": "Monkey Icons",
+        "path": "./src/monkey-icon.json"
+      }
+    ],
+    "themes": [
+      {
+        "id": "monkey-theme",
+        "label": "Monkey Theme (Light)",
+        "path": "./src/themes/monkey-theme-light.json"
+      },
+      {
+        "id": "monkey-theme-dark",
+        "label": "Monkey Theme (Dark)",
+        "path": "./src/themes/monkey-theme-dark.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.13.0",
+    "@vscode/vsce": "^3.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "ovsx": "^0.10.1",
+    "svgo": "^3.3.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vsc-icon-maker": "^2.0.0"
+  }
+}
