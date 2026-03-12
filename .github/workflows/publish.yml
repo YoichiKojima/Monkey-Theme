@@ -1,0 +1,89 @@
+name: Publish on VSCode Marketplace and Open VSX Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - package.json
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Publish Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get version
+        id: version
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Check if version is valid
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Version '$VERSION' is not valid (expected semver x.y.z), skipping publish"
+            exit 1
+          fi
+          echo "Version ($VERSION) is valid, continuing with publish"
+
+      - name: Check if already released
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "v$VERSION" &>/dev/null; then
+            echo "Version v$VERSION is already released, skipping publish"
+            exit 1
+          fi
+          echo "Version v$VERSION is not yet released, continuing"
+
+      - name: Install tools
+        uses: jdx/mise-action@v2
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate the json file
+        run: pnpm run build
+
+      - name: Package the extension
+        run: pnpm run package
+
+      - name: Publish to Visual Studio Marketplace
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+        run: |
+          if [ -n "$VSCE_TOKEN" ]; then
+            pnpm exec vsce publish -p "$VSCE_TOKEN"
+          else
+            echo "VSCE_TOKEN not set, skipping publish to Visual Studio Marketplace"
+          fi
+
+      - name: Publish to Open VSX Registry
+        env:
+          OVSX_TOKEN: ${{ secrets.OVSX_TOKEN }}
+        run: |
+          if [ -n "$OVSX_TOKEN" ]; then
+            pnpm exec ovsx publish -p "$OVSX_TOKEN"
+          else
+            echo "OVSX_TOKEN not set, skipping publish to Open VSX Registry"
+          fi
+
+      - name: Create Release and upload VSIX
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          files: monkey-theme-*.vsix
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
